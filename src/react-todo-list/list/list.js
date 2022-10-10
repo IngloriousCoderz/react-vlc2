@@ -1,12 +1,11 @@
 import cn from "classnames";
+import PropTypes from "prop-types";
 
 import classes from "./list.module.scss";
 
 function List({ tasks, onToggle, onRemove }) {
   const handleToggle = (id) => (event) => onToggle(id);
   const handleRemove = (id) => (event) => onRemove(id);
-
-  console.log("render");
 
   return (
     <ul>
@@ -24,5 +23,23 @@ function List({ tasks, onToggle, onRemove }) {
     </ul>
   );
 }
+
+List.propTypes = {
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string,
+      completed: PropTypes.bool,
+    })
+  ).isRequired,
+  onToggle: PropTypes.func.isRequired,
+  onRemove: PropTypes.func.isRequired,
+};
+
+List.defaultProps = {
+  tasks: [],
+  onToggle: () => {},
+  onRemove: () => {},
+};
 
 export default List;

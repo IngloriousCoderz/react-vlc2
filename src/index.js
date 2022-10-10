@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import App from "./react-todo-list/react-todo-list";
+import App from "./react-todo-list";
 
 import "./index.css";
 

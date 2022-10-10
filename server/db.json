@@ -6,9 +6,9 @@
       "completed": true
     },
     {
-      "id": 4,
-      "text": "Ciao modno!",
-      "completed": true
+      "id": 2,
+      "text": "Look for a job",
+      "completed": false
     }
   ]
 }
