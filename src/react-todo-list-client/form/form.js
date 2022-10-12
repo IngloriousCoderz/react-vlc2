@@ -1,7 +1,7 @@
 import { useForm } from "./use-form";
 
-function Form() {
-  const { text, handleChange, handleSubmit } = useForm();
+function Form({ onSubmit }) {
+  const { text, handleChange, handleSubmit } = useForm(onSubmit);
 
   return (
     <form onSubmit={handleSubmit}>

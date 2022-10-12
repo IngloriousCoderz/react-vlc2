@@ -6,9 +6,12 @@
       "completed": true
     },
     {
-      "id": 2,
       "text": "Look for a job",
-      "completed": false
+      "id": 2
+    },
+    {
+      "text": "Forget everything",
+      "id": 3
     }
   ]
 }

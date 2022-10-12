@@ -17,9 +17,7 @@ export function useTodoList() {
   };
 
   const handleSubmit = async (text) => {
-    const maxId = tasks.length ? tasks[tasks.length - 1].id : 0;
-    const task = { id: maxId + 1, text, completed: false };
-    await api.addTask(task);
+    await api.addTask({ text });
 
     fetchTasks();
   };

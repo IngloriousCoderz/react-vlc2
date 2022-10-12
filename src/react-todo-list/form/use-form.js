@@ -1,18 +1,17 @@
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-export function useForm(onSubmit) {
-  const [text, setText] = useState("");
+import { selectText } from "react-todo-list/store/selectors";
+import { taskAdded } from "react-todo-list/store/action-creators";
+import { textChanged } from "./text.slice";
 
-  const handleChange = (event) => {
-    setText(event.target.value);
-  };
+export function useForm() {
+  const text = useSelector(selectText);
+  const dispatch = useDispatch();
 
+  const handleChange = (event) => dispatch(textChanged(event.target.value));
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    onSubmit(text);
-
-    setText("");
+    dispatch(taskAdded(text));
   };
 
   return { text, handleChange, handleSubmit };
