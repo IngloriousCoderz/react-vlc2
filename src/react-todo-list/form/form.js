@@ -1,7 +1,19 @@
-import { useForm } from "./use-form";
+import { useContext } from "react";
+import { setText, addTask } from "react-todo-list/logic/action-creators";
+import {
+  DispatchContext,
+  StateContext,
+} from "react-todo-list/todo-list.context";
 
 function Form() {
-  const { text, handleChange, handleSubmit } = useForm();
+  const { text } = useContext(StateContext);
+  const dispatch = useContext(DispatchContext);
+
+  const handleChange = (event) => dispatch(setText(event.target.value));
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(addTask(text));
+  };
 
   return (
     <form onSubmit={handleSubmit}>

@@ -6,12 +6,28 @@
       "completed": true
     },
     {
-      "text": "Look for a job",
-      "id": 2
-    },
-    {
       "text": "Forget everything",
       "id": 3
+    },
+    {
+      "text": "Ciao mondo!",
+      "id": 4
+    },
+    {
+      "text": "Ciao",
+      "id": 5
+    },
+    {
+      "text": "mondo",
+      "id": 6
+    },
+    {
+      "Ciao mondo!": "",
+      "id": 7
+    },
+    {
+      "Ciao mondo!": "",
+      "id": 8
     }
   ]
 }
